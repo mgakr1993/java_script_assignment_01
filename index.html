@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Assignment 01</title>
+
+</head>
+
+<body style="background-color: skyblue;">
+	<script>
+		let st_score = [
+			["Wang",80],
+			["Chen",75],
+			["Zhao",92],
+			["Liu",60],
+			["Yamamoto",91],
+			["Tanaka",82]
+			]
+
+		document.write("<b>There are six students. Their scores are as follows.</b> <br>")
+		//Get the all score
+		for (let i = 0; i < st_score.length; i++) {
+		  document.write( st_score[i][0] , "  " , st_score[i][1] , "<br>");
+		}
+
+
+		document.write("<br/>")
+		document.write("<b>The following students are students who can get A.</b> <br>")
+
+		//Get all the student who can get "A"
+		for (let i = 0; i < st_score.length; i++) {
+		  if (st_score[i][1] > 90) {
+		    document.write(st_score[i][0],"  ",st_score[i][1],"<br/>");
+		  }
+		}
+
+		//Get the total score & average score
+		let j=0;
+		for (let i = 0; i < st_score.length; i++) {
+		  j+= st_score[i][1];
+		}
+		document.write("<br> Total Score is ",j)
+		document.write("<br> The Average Score is ",j/st_score.length,"<br>")
+		
+
+		//Sort list based on score values
+		for(i=0;i<st_score.length;i++){
+			for (j=i+1;j<st_score.length;j++){
+				if (st_score[i][1] < st_score[j][1]){
+					m=st_score[i][1];
+					n=st_score[i][0];
+					st_score[i][1]=st_score[j][1];
+					st_score[i][0]=st_score[j][0];
+					st_score[j][1]=m;
+					st_score[j][0]=n;
+					
+				}
+
+			}
+
+		}
+
+
+		document.write("<br/>")
+		document.write("<b>Sort scores in descending order.</b> <br>")
+
+		for (let i = 0; i < st_score.length; i++) {
+		  document.write(st_score[i][0] , "  " , st_score[i][1],"<br>");
+		}
+
+	</script>
+	
+</body>
+
+</html>
